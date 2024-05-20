@@ -17,7 +17,7 @@ const AddTask = () => {
   const onSubmit = () => {
     addTask(newTask);
     setNewTask({
-      id: newTask.id + 1,
+      id: crypto.randomUUID(),
       title: "",
     });
   };
