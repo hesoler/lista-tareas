@@ -1,18 +1,15 @@
 import { create } from "zustand";
-import { TaskType } from "../d.types";
+import { TaskType, idType } from "../d.types";
 
 interface TaskState {
   tasks: TaskType[];
   addTask: (task: TaskType) => void;
-  editTask: (id: number, updataTask: Partial<TaskType>) => void;
-  removeTask: (id: number) => void;
+  editTask: (id: idType, updataTask: Partial<TaskType>) => void;
+  removeTask: (id: idType) => void;
 }
 
 const useTaskStore = create<TaskState>((set) => ({
-  tasks: [
-    { id: 1, title: "Description task", completed: false },
-    { id: 2, title: "Description task 2", completed: true },
-  ],
+  tasks: [],
   addTask: (task) => set((state) => ({ tasks: [...state.tasks, task] })),
   editTask: (id, updatedTask) =>
     set((state) => ({
