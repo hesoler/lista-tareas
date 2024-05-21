@@ -1,5 +1,8 @@
+const idValue = crypto.randomUUID();
+export type idType = typeof idValue;
+
 export type TaskType = {
-  id: number;
+  id: idType;
   title: string;
   completed: boolean;
 };

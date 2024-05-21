@@ -4,30 +4,32 @@ import { Button, Flex, Form, Input } from "antd";
 import { Link } from "react-router-dom";
 
 const AddTask = () => {
-  const { tasks, addTask } = useTaskStore();
-  const [newTask, setNewTask] = useState({
-    id: tasks.length + 1,
-    title: "",
-  });
+  const { addTask } = useTaskStore();
+  const [title, setTitle] = useState('')
 
-  const handleInputChange = (e) => {
-    setNewTask({ ...newTask, title: e.target.value });
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setTitle(e.target.value);
   };
 
   const onSubmit = () => {
-    addTask(newTask);
-    setNewTask({
+    if (title.trim().length < 1) return;
+
+    const newTask = {
       id: crypto.randomUUID(),
-      title: "",
-    });
+      title,
+      completed: false
+    };
+    addTask(newTask);
+    setTitle('')
   };
+
   return (
     <>
       <Form onFinish={onSubmit} className="container">
         <Flex gap="10px">
           <Input
             placeholder="Enter the new Task"
-            value={newTask.title}
+            value={title}
             onChange={handleInputChange}
           />
           <Button type="primary" htmlType="submit">
