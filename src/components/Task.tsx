@@ -4,7 +4,7 @@ import { Button, Checkbox, Space } from "antd";
 import useTaskStore from "../contexts/tasksStore";
 import { CheckboxChangeEvent } from "antd/es/checkbox";
 
-const Task = ({ task }: { task: TaskType }) => {
+const Task = ({ task, index }: { task: TaskType, index: number }) => {
   const { editTask, removeTask } = useTaskStore();
 
   const changeCompletedTask = (event: CheckboxChangeEvent) => {
@@ -20,7 +20,7 @@ const Task = ({ task }: { task: TaskType }) => {
           <Checkbox
             checked={task.completed}
             onChange={changeCompletedTask} />
-          <p>{task.id}</p>
+          <p>{index + 1}</p>
           <p>{task.title}</p>
         </Space>
       </div>

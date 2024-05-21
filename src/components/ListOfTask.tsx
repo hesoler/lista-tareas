@@ -9,9 +9,9 @@ export const ListOfTask = () => {
   return (
     <div className="list-container">
       <Card>
-        {tasks.map((item) => (
+        {tasks.map((item, index) => (
           <div key={item.id}>
-            <Task task={item} />
+            <Task task={item} index={index} />
           </div>
         ))}
         {tasks.length == 0 && <p>No Tasks</p>}
