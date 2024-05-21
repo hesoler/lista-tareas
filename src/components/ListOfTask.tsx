@@ -5,12 +5,13 @@ import { Card } from "antd";
 
 export const ListOfTask = () => {
   const { tasks } = useTaskStore();
+
   return (
     <div className="list-container">
-      <Card title="List of Tasks">
-        {tasks.length > 0 && tasks.map((item) => (
+      <Card>
+        {tasks.map((item) => (
           <div key={item.id}>
-            <Task task={item}></Task>
+            <Task task={item} />
           </div>
         ))}
         {tasks.length == 0 && <p>No Tasks</p>}
