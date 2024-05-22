@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import useTaskStore from "../contexts/tasksStore";
 import Task from "./Task";
 import { Card } from "antd";
 
 export const ListOfTask = () => {
-  const { tasks } = useTaskStore();
+  const { tasks, getTasks } = useTaskStore();
+
+/*   useEffect(() => {
+    getTasks();
+  }, []); */
 
   return (
     <div className="list-container">

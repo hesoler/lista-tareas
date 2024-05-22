@@ -1,0 +1,13 @@
+{
+  "tasks": [
+    { "id": 1, "title": "Crear proyecto con React", "completed": true },
+    { "id": 2, "title": "Instalar dependencias", "completed": false },
+    { "id": 3, "title": "Agregar nuevas tareas a una lista", "completed": false },
+    { "id": 4, "title": "Marcar una tarea como completada y eliminar tareas de la lista", "completed": false },
+    { "id": 5, "title": "Componentes reutilizables y composición de componentes.", "completed": false },
+    { "id": 6, "title": "Gestionar el estado de la aplicación", "completed": false },
+    { "id": 7, "title": "Utilizando React Router para navegar entre las pantallas de la aplicación", "completed": false },
+    { "id": 8, "title": "Utilizar Fetch API o Axios para realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) en una API RESTful simulada.", "completed": false },
+    { "id": 9, "title": "Implementar pruebas unitarias para los componentes y las acciones de Zustand", "completed": false }
+  ]
+}
